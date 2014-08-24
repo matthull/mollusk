@@ -3,9 +3,13 @@ require_relative 'starship'
 require 'minitest/autorun'
 
 class TestMollusk < MiniTest::Unit::TestCase
-  def test_star_wars_returns_only_x_wing
-    star_wars = Starship.star_wars
-    assert_equal 1,        star_wars.count
-    assert_equal 'X-Wing', star_wars.first[:name]
+  def test_single_filter
+    star_trek_ships = Starship.star_trek.map { |s| s[:class] }
+    assert_equal ['Constitution'], star_trek_ships
+  end
+
+  def test_chained_filter
+    star_wars_fighters = Starship.star_wars.fighters.map { |s| s[:class] }.sort
+    assert_equal ['Tie Fighter', 'X-Wing'], star_wars_fighters
   end
 end

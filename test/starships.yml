@@ -2,10 +2,18 @@
 ---
 :starships:
   -
-    :name: X-Wing
+    :class: X-Wing
     :universe: Star Wars
     :type: Fighter
   -
-    :name: U.S.S. Enterprise
+    :class: Tie Fighter
+    :universe: Star Wars
+    :type: Fighter
+  -
+    :class: Star Destroyer
+    :universe: Star Wars
+    :type: Capital Ship
+  -
+    :class: Constitution
     :universe: Star Trek
     :type: Capital Ship
