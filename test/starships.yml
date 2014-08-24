@@ -1,0 +1,11 @@
+# Data for Starship test class
+---
+:starships:
+  -
+    :name: X-Wing
+    :universe: Star Wars
+    :type: Fighter
+  -
+    :name: U.S.S. Enterprise
+    :universe: Star Trek
+    :type: Capital Ship
