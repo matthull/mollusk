@@ -10,11 +10,11 @@ module Mollusk
   #     %w( foo bar baz )
   #   end
   #
-  #   filter :starts_with_b, -> { chars.first == 'b' }
+  #   filter :starts_with_b, -> { select { |w| w.chars.first == 'b' } }
+  #   filter :long,          -> { select { |w| w.length > 3 } }
   #  end
   #
-  #  Widget.starts_with_b
-  #  => ['bar', 'baz']
+  #  Widget.starts_with_b #=> ['bar', 'baz']
   module Filterable
     def self.extended(base)
       define_method(:_mollusk_base_class) { base }
