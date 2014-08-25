@@ -21,8 +21,17 @@ Or install it yourself as:
 
     $ gem install mollusk
 
-## Usage Example
-````
+## Usage
+To enable Mollusk filters on a class:
+
+  - `extend Mollusk::Filterable`
+  - Create a class method named `all` that returns the collection (e.g. Array) to be filtered
+
+Each filter must specify a operation (or operations) that can be applied to the
+collection returned by `all` (for an Array `select`, `reject`, and `include` are good examples.)
+
+## Example
+```
 class Widget
   extend Mollusk::Filterable
 
