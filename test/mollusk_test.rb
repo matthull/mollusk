@@ -1,8 +1,7 @@
 require_relative 'test_helper'
-require_relative 'starship'
 require 'minitest/autorun'
 
-class TestMollusk < MiniTest::Unit::TestCase
+class TestMollusk < MiniTest::Test
   def test_single_filter
     star_trek_ships = Starship.star_trek.map { |s| s[:class] }
     assert_equal ['Constitution'], star_trek_ships
