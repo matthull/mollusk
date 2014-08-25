@@ -11,4 +11,9 @@ class TestMollusk < MiniTest::Test
     star_wars_fighters = Starship.star_wars.fighters.map { |s| s[:class] }.sort
     assert_equal ['Tie Fighter', 'X-Wing'], star_wars_fighters
   end
+
+  def test_custom_collection_method
+    star_trek_ships = StarshipCustom.star_trek.map { |s| s[:class] }
+    assert_equal ['Constitution'], star_trek_ships
+  end
 end

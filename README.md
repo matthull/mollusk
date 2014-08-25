@@ -25,17 +25,18 @@ Or install it yourself as:
 To enable Mollusk filters on a class:
 
   - `extend Mollusk::Filterable`
-  - Create a class method named `all` that returns the collection (e.g. Array) to be filtered
+  - Use `set_collection_method` to specify a the class method which returns the collection (defaults to `all` if not specified)
 
 Each filter must specify a operation (or operations) that can be applied to the
-collection returned by `all` (for an Array `select`, `reject`, and `include` are good examples.)
+collection returned by the collection method (for an Array `select`, `reject`, and `include` are good examples.)
 
 ## Example
 ```
 class Widget
   extend Mollusk::Filterable
+  set_collection_method :parts
 
-  def self.all
+  def self.parts
     %w( foo bar bashaz )
   end
 
@@ -43,7 +44,7 @@ class Widget
   filter :long,          -> { select { |w| w.length > 3 } }
  end
 
- Widget.starts_with_b #=> ['bar', 'baz']
+ Widget.starts_with_b.long #=> ['bashaz']
 ```
 ## Contributing
 
