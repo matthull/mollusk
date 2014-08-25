@@ -1,4 +1,4 @@
-# Mollusk
+# Mollusk [![Build Status](https://travis-ci.org/matthull/mollusk.svg?branch=master)](https://travis-ci.org/matthull/mollusk)
 
 Mollusk provides chainable filters for arrays and other collections, ActiveRecord-style.
 
