@@ -17,10 +17,10 @@ module Mollusk
   #  Widget.starts_with_b #=> ['bar', 'baz']
   module Filterable
     def self.extended(base)
-      define_method(:_mollusk_base_class) { base }
+      base.send :define_singleton_method, :_mollusk_base_class, -> { base }
       collection_module =
         Mollusk::Collection.const_set base.name.to_sym, Module.new
-      define_method(:_mollusk_collection_module) { collection_module }
+      base.send :define_singleton_method, :_mollusk_collection_module, -> { collection_module }
     end
 
     def filter(name, callback)
