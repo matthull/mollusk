@@ -46,6 +46,10 @@ class Widget
 
  Widget.starts_with_b.long #=> ['bashaz']
 ```
+## Alternatives
+[active_hash](https://github.com/zilkey/active_hash) provides a nice
+subset of ActiveRecord functionality for a collection of hashes.
+
 ## Contributing
 
 1. Fork it ( http://github.com/matthull/mollusk/fork )
